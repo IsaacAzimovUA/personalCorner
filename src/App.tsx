@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import { SkyBox } from './Components/SkyBox'
 import { Scene } from './Components/Scene'
 import { Suspense } from 'react'
+
 // import { Perf } from 'r3f-perf'
 
 function App() {
