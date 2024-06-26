@@ -2,7 +2,8 @@ import { Canvas } from '@react-three/fiber'
 import { SkyBox } from './Components/SkyBox'
 import { Scene } from './Components/Scene'
 import { Suspense } from 'react'
-
+import { Selection } from '@react-three/postprocessing'
+import Effects from './Components/Effects'
 // import { Perf } from 'r3f-perf'
 
 function App() {
@@ -10,8 +11,11 @@ function App() {
     <Canvas>
       {/* <Perf /> */}
       <Suspense fallback={null}>
-        <SkyBox />
-        <Scene />
+        <Selection>
+          <Effects />
+          <SkyBox />
+          <Scene />
+        </Selection>
       </Suspense>
     </Canvas>
   )
