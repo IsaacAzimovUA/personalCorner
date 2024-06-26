@@ -4,9 +4,9 @@ import React from 'react'
 import { Vector3 } from '@react-three/fiber'
 
 interface ModelWithTextProps {
-  scale: number
+  scale?: number
   modelPath: string
-  modelPosition: Vector3
+  modelPosition?: Vector3
   modelScale?: number
   text: string
   textPosition: Vector3
@@ -39,7 +39,6 @@ const ModelWithText: React.FC<ModelWithTextProps> = ({
         anchorX={textAnchorX}
       >
         {text}
-        <meshBasicMaterial color={'white'} toneMapped={false} />
       </Text>
       <Select enabled>
         <primitive
