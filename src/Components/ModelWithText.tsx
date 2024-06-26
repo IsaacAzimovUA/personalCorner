@@ -4,6 +4,7 @@ import React from 'react'
 import { Vector3 } from '@react-three/fiber'
 
 interface ModelWithTextProps {
+  scale: number
   modelPath: string
   modelPosition: Vector3
   modelScale?: number
@@ -13,6 +14,7 @@ interface ModelWithTextProps {
   textFontSize: number
 }
 const ModelWithText: React.FC<ModelWithTextProps> = ({
+  scale,
   modelPath,
   modelPosition,
   modelScale,
@@ -23,7 +25,12 @@ const ModelWithText: React.FC<ModelWithTextProps> = ({
 }) => {
   const modelRectLogo = useGLTF(modelPath, true)
   return (
-    <Float floatIntensity={3} rotationIntensity={1} position={modelPosition}>
+    <Float
+      floatIntensity={3}
+      rotationIntensity={1}
+      position={modelPosition}
+      scale={scale}
+    >
       <Text
         font={'fonts/JetBrainsMono-VariableFont_wght.ttf'}
         fontSize={textFontSize}
