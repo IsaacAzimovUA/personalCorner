@@ -1,6 +1,5 @@
 import { Center, Float, Text3D, useGLTF } from '@react-three/drei'
 import { Select } from '@react-three/postprocessing'
-import React from 'react'
 import { Vector3 } from '@react-three/fiber'
 
 export interface ModelWithTextProps {
@@ -19,6 +18,7 @@ export const ModelWithText: React.FC<ModelWithTextProps> = ({
   textPosition,
 }) => {
   const modelRectLogo = useGLTF(modelPath, true)
+
   return (
     <Float
       floatIntensity={1}
@@ -27,24 +27,26 @@ export const ModelWithText: React.FC<ModelWithTextProps> = ({
       position={[0, 0, 0]}
     >
       <Center>
-        <Text3D
-          scale={0.19}
-          height={0.4}
-          position={textPosition}
-          font={'fonts/JetBrainsMono_Regular.json'}
-        >
-          {text}
-          <meshStandardMaterial color={'white'} />
-        </Text3D>
-        <Select enabled>
-          <pointLight intensity={10} position={[0, 0, 3]} />
+        <group>
+          <Text3D
+            scale={0.19}
+            height={0.4}
+            position={textPosition}
+            font={'fonts/JetBrainsMono_Regular.json'}
+          >
+            {text}
+            <meshStandardMaterial color={'white'} />
+          </Text3D>
+          <Select enabled>
+            <pointLight intensity={10} position={[0, 0, 3]} />
 
-          <primitive
-            object={modelRectLogo.scene}
-            dispose={null}
-            scale={modelScale}
-          />
-        </Select>
+            <primitive
+              object={modelRectLogo.scene}
+              dispose={null}
+              scale={modelScale}
+            />
+          </Select>
+        </group>
       </Center>
     </Float>
   )

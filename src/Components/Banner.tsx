@@ -4,6 +4,7 @@ import { useGLTF } from '@react-three/drei'
 import { Flex, Box } from '@react-three/flex'
 import { useThree } from '@react-three/fiber'
 import { ModelWithText } from './ModelWithText'
+import { TypeAnimation } from 'react-type-animation'
 
 const BannerText = () => {
   const mobileScaleFactor = window.innerWidth < 576 ? 0.7 : 1
@@ -43,11 +44,38 @@ const BannerText = () => {
       </Flex>
       <Html fullscreen>
         <div className="wrapper">
-          <div style={{ maxWidth: '40rem' }}>
-            <h1>Dmytro Hordus</h1>
-            <p
+          <div style={{ maxWidth: '40rem', minHeight: '17rem' }}>
+            <h1
               style={{
-                color: '#fff',
+                fontSize: window.innerWidth < 568 ? '2rem' : '3rem',
+                margin: '0',
+              }}
+            >
+              Dmytro Hordus
+            </h1>
+            <TypeAnimation
+              className=".bannerText"
+              preRenderFirstString={true}
+              wrapper="p"
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                'Hey there! 👋 I’m a back-end developer',
+                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                'Hey there! 👋 I’m a front-end developer',
+                1000,
+                'Hey there! 👋 I’m a full-stack developer who loves crafting dynamic web experiences. From sleek interfaces with TailWind CSS 🎨 to seamless state management with React and Redux Toolkit ⚛️,I’m all about making the web engaging and fun.',
+                1000,
+              ]}
+              speed={50}
+              style={{
+                fontSize: window.innerWidth < 568 ? '1rem' : '1.3rem',
+                display: 'inline-block',
+                fontFamily: 'fonts/JetBrainsMono_Regular.ttf',
+                textAlign: 'justify',
+              }}
+            />
+            {/* <p
+              style={{
                 textAlign: 'justify',
                 textIndent: '2rem',
               }}
@@ -59,7 +87,6 @@ const BannerText = () => {
             </p>
             <p
               style={{
-                color: '#fff',
                 textAlign: 'justify',
                 textIndent: '2rem',
               }}
@@ -68,7 +95,7 @@ const BannerText = () => {
               Spring, and Drei 🎮. When I’m not coding, you’ll find me strumming
               my ukulele 🎶, exploring new tech 🔍, or diving into a good book
               📚. Let’s build something awesome together!
-            </p>
+            </p> */}
           </div>
         </div>
       </Html>
