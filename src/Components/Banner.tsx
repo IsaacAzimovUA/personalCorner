@@ -17,31 +17,25 @@ const BannerText = () => {
       >
         <Box
           justifyContent={'space-between'}
-          // maxHeight={'700'}
           maxWidth={'700px'}
           width={'100%'}
           height={'100%'}
         >
-          <Box centerAnchor alignSelf={'flex-end'} padding={1}>
+          <Box centerAnchor alignSelf={'flex-end'} marginTop={0.5}>
             <ModelWithText
               scale={mobileScaleFactor}
               modelPath="models/reactLogo.gltf"
               modelScale={0.8}
               text={'<Frontend/>'}
-              textPosition={[1.2, 0, 0]}
-              textAnchorX={'left'}
-              textFontSize={0.3}
+              textPosition={[-3, 0, 0]}
             />
           </Box>
-
-          <Box centerAnchor padding={1}>
+          <Box centerAnchor marginBottom={0.5}>
             <ModelWithText
               scale={mobileScaleFactor}
               modelPath="models/nodeLogo.gltf"
               text={"res.end('Backend');"}
-              textPosition={[-1.2, 0, 0]}
-              textAnchorX={'right'}
-              textFontSize={0.3}
+              textPosition={[1.1, 0, 0]}
             />
           </Box>
         </Box>
