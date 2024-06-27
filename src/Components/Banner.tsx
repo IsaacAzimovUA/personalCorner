@@ -1,8 +1,9 @@
 import { Html } from '@react-three/drei'
 import { useGLTF } from '@react-three/drei'
-import ModelWithText from './ModelWithText'
+
 import { Flex, Box } from '@react-three/flex'
 import { useThree } from '@react-three/fiber'
+import { ModelWithText } from './ModelWithText'
 
 const BannerText = () => {
   const mobileScaleFactor = window.innerWidth < 576 ? 0.7 : 1
@@ -43,17 +44,7 @@ const BannerText = () => {
       <Html fullscreen>
         <div className="wrapper">
           <div style={{ maxWidth: '40rem' }}>
-            <h1
-              style={{
-                textShadow: '4px 1px #0FFBF9,-4px 1px #FF3F4A',
-                fontWeight: '300',
-                lineHeight: '1.2',
-                fontSize: '2.3rem',
-                textAlign: 'center',
-              }}
-            >
-              Dmytro Hordus
-            </h1>
+            <h1>Dmytro Hordus</h1>
             <p
               style={{
                 color: '#fff',

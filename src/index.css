@@ -24,12 +24,21 @@ body {
     margin: 0;
   }
 }
+h1 {
+  color: #fff;
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 2.3rem;
+  text-align: center;
+  text-shadow: 3px 1px #0ffbf9, -3px 1px #ff3f4a;
+}
 
 .wrapper {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding-inline: 2rem;
 }
