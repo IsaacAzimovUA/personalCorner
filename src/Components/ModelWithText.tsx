@@ -29,8 +29,8 @@ export const ModelWithText: React.FC<ModelWithTextProps> = ({
       <Center>
         <group>
           <Text3D
-            scale={0.19}
-            height={0.4}
+            scale={0.23}
+            height={0.2}
             position={textPosition}
             font={'fonts/JetBrainsMono_Regular.json'}
           >
