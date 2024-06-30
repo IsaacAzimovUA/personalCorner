@@ -8,7 +8,7 @@ import Effects from './Components/Effects'
 
 function App() {
   return (
-    <Canvas>
+    <Canvas gl={{ antialias: false }}>
       {/* <Perf /> */}
       <Suspense fallback={null}>
         <Selection>

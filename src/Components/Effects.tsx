@@ -4,10 +4,10 @@ const Effects = () => {
   return (
     <EffectComposer autoClear={false}>
       <Outline
-        edgeStrength={10}
+        edgeStrength={2}
         hiddenEdgeColor={0xffffff}
-        blur
-        kernelSize={1}
+        // blur
+        // kernelSize={1}
       />
     </EffectComposer>
   )
